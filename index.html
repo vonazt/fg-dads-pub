@@ -1,0 +1,53 @@
+<script>
+  var end = new Date("02/11/2022 08:0 PM");
+
+  var _second = 1000;
+  var _minute = _second * 60;
+  var _hour = _minute * 60;
+  var _day = _hour * 24;
+  var timer;
+
+  function showRemaining() {
+    var now = new Date();
+    var distance = end - now;
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "EXPIRED!";
+
+      return;
+    }
+    var days = Math.floor(distance / _day);
+    var hours = Math.floor((distance % _day) / _hour);
+    var minutes = Math.floor((distance % _hour) / _minute);
+    var seconds = Math.floor((distance % _minute) / _second);
+
+    document.getElementById("countdown").innerHTML = days + " days ";
+    document.getElementById("countdown").innerHTML += hours + " hrs ";
+    document.getElementById("countdown").innerHTML += minutes + " mins ";
+    document.getElementById("countdown").innerHTML += seconds + " secs";
+  }
+
+  timer = setInterval(showRemaining, 1000);
+</script>
+<style>
+  body {
+    height: 100vh;
+    background-color: chartreuse;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+</style>
+<body>
+  <div class="container">
+    <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
+    <h1 id="countdown"></h1>
+  </div>
+</body>
