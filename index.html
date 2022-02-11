@@ -1,7 +1,8 @@
 <script>
   var end = new Date("02/11/2022 08:0 PM");
 
-  var _second = 1000;
+  var _millisecond = 1;
+  var _second = _millisecond * 1000;
   var _minute = _second * 60;
   var _hour = _minute * 60;
   var _day = _hour * 24;
@@ -12,7 +13,7 @@
     var distance = end - now;
     if (distance < 0) {
       clearInterval(timer);
-      document.getElementById("countdown").innerHTML = "EXPIRED!";
+      document.getElementById("countdown").innerHTML = "DRINKS HAVE STARTED!!!";
 
       return;
     }
@@ -20,11 +21,13 @@
     var hours = Math.floor((distance % _day) / _hour);
     var minutes = Math.floor((distance % _hour) / _minute);
     var seconds = Math.floor((distance % _minute) / _second);
+    var milliseconds = Math.floor((distance % _second) / _millisecond);
 
     document.getElementById("countdown").innerHTML = days + "days ";
     document.getElementById("countdown").innerHTML += hours + "hrs ";
     document.getElementById("countdown").innerHTML += minutes + "mins ";
-    document.getElementById("countdown").innerHTML += seconds + "secs";
+    document.getElementById("countdown").innerHTML += seconds + "secs ";
+    // document.getElementById("countdown").innerHTML += milliseconds + "ms";
   }
 
   timer = setInterval(showRemaining, 1000);
