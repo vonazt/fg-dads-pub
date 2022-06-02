@@ -1,5 +1,5 @@
 <script>
-  var end = new Date("02/11/2022 08:0 PM");
+  var end = new Date("06/17/2022 08:0 PM");
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
@@ -30,6 +30,25 @@
     // document.getElementById("countdown").innerHTML += milliseconds + "ms";
   }
 
+  setInterval(() => {
+    const randomColour = Math.floor(0x100000000 * Math.random());
+    const randomRgba =
+      "rgba(" +
+      (randomColour & 255) +
+      "," +
+      ((randomColour >> 8) & 255) +
+      "," +
+      ((randomColour >> 16) & 255) +
+      "," +
+      ((randomColour >> 24) & 255) / 255 +
+      ")";
+
+    document.body.style.backgroundColor = randomRgba;
+
+    // document.getElementById("drinks").style.backgroundColor = "#" + randomColor;
+    color.innerHTML = randomRgba;
+  }, 500);
+
   timer = setInterval(showRemaining, 1000);
 </script>
 <style>
@@ -54,7 +73,7 @@
   <head>
     <title>FG DADS DRINKS COUNTDOWN</title>
   </head>
-  <body>
+  <body id="drinks">
     <div class="container">
       <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
       <h1 id="countdown"></h1>
