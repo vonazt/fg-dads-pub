@@ -1,4 +1,4 @@
-<script>
+<script defer>
   var end = new Date("2023/02/24 08:0 PM");
 
   var _millisecond = 1;
@@ -48,7 +48,7 @@
   }, 500);
 
   timer = setInterval(showRemaining, 1000);
-  timer= setInterval(() => {
+  setInterval(() => {
     document.getElementById("location").innerHTML = "TRACKS!!!!"
   }, 5000)
 </script>
@@ -77,7 +77,7 @@
   <body id="drinks">
     <div class="container">
       <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
-      <h1 id="countdown"></h1>
+      <h1 id="countdown">COMPUTING...</h1>
 
       <h1>YES, BUT WHERE????</h1>
       <h1 id="location">WAIT FOR IT...</h1>
