@@ -27,7 +27,6 @@
     document.getElementById("countdown").innerHTML += hours + "hrs ";
     document.getElementById("countdown").innerHTML += minutes + "mins ";
     document.getElementById("countdown").innerHTML += seconds + "secs ";
-    // document.getElementById("countdown").innerHTML += milliseconds + "ms";
   }
 
   setInterval(() => {
@@ -45,11 +44,13 @@
 
     document.body.style.backgroundColor = randomRgba;
 
-    // document.getElementById("drinks").style.backgroundColor = "#" + randomColor;
     color.innerHTML = randomRgba;
   }, 500);
 
   timer = setInterval(showRemaining, 1000);
+  timer= setInterval(() => {
+    document.getElementById("location").innerHTML = "TRACKS!!!!"
+  }, 5000)
 </script>
 <style>
   body {
@@ -79,7 +80,7 @@
       <h1 id="countdown"></h1>
 
       <h1>YES, BUT WHERE????</h1>
-      <h1>TRACKS</h1>
+      <h1 id="location">WAIT FOR IT...</h1>
     </div>
   </body>
 </html>
