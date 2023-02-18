@@ -1,4 +1,38 @@
-<script defer>
+
+<style>
+  body {
+    height: 100vh;
+    background-color: chartreuse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+  }
+</style>
+<html>
+  <head>
+    <title>FG DADS DRINKS COUNTDOWN</title>
+  </head>
+  <body id="drinks">
+    <div class="container">
+      <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
+      <h1 id="countdown">COMPUTING...</h1>
+
+      <h1>YES, BUT WHERE????</h1>
+      <h1 id="location">WAIT FOR IT...</h1>
+    </div>
+  </body>
+</html>
+
+<script>
   var end = new Date("2023/02/24 08:0 PM");
 
   var _millisecond = 1;
@@ -46,41 +80,9 @@
 
     color.innerHTML = randomRgba;
   }, 500);
-
+  showRemaining();
   timer = setInterval(showRemaining, 1000);
   setInterval(() => {
     document.getElementById("location").innerHTML = "TRACKS!!!!"
   }, 5000)
 </script>
-<style>
-  body {
-    height: 100vh;
-    background-color: chartreuse;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  h1 {
-    width: 100%;
-    font-size: 5rem;
-    text-align: center;
-  }
-</style>
-<html>
-  <head>
-    <title>FG DADS DRINKS COUNTDOWN</title>
-  </head>
-  <body id="drinks">
-    <div class="container">
-      <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
-      <h1 id="countdown">COMPUTING...</h1>
-
-      <h1>YES, BUT WHERE????</h1>
-      <h1 id="location">WAIT FOR IT...</h1>
-    </div>
-  </body>
-</html>
