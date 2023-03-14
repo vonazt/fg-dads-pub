@@ -28,12 +28,18 @@
 
       <h1>YES, BUT WHERE????</h1>
       <h1 id="location">WAIT FOR IT...</h1>
+      <h1 id="expect"></h1>
+      <h1 id="details"></h1>
+      <h1 id="expensive"></h1>
+      <h1 id="cost"></h1>
+      <h1 id="bargain"></h1>
+
     </div>
   </body>
 </html>
 
 <script>
-  var end = new Date("2023/02/24 08:0 PM");
+  var end = new Date("2023/03/24 08:0 PM");
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
@@ -83,6 +89,22 @@
   showRemaining();
   timer = setInterval(showRemaining, 1000);
   setInterval(() => {
-    document.getElementById("location").innerHTML = "TRACKS!!!!!"
+    document.getElementById("location").innerHTML = "FOREST GATE WORKS!!"
   }, 5000)
+
+  setInterval(() => {
+    document.getElementById("expect").innerHTML = "SOUNDS GREAT, WHAT CAN I EXPECT?"
+  }, 7000)
+  setInterval(() => {
+    document.getElementById("details").innerHTML = "FIFA | STREET FIGHTER | BEER PONG | CARD GAMES | PIZZA"
+  }, 9000)
+  setInterval(() => {
+    document.getElementById("expensive").innerHTML = "SOUNDS EXPENSIVE"
+  }, 11500)
+  setInterval(() => {
+    document.getElementById("cost").innerHTML = "ONLY £7!!!"
+  }, 13500)
+  setInterval(() => {
+    document.getElementById("bargain").innerHTML = "BARGAIN!!!"
+  }, 15500)
 </script>
