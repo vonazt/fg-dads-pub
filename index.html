@@ -87,13 +87,15 @@
   }, 2000);
 
   setInterval(() => {
-    document.getElementById("expect").innerHTML = [
+    const slogans = [
       "CALL BARBIE FOR AN ABUSIVE TIME",
       "PROFESSOR TABATOU WILL BE THERE IN SPIRIT",
       "BAN THE CARS",
       "LIZZIE LINE IS FUCKED",
       "CLICK HERE FOR COMMUNITY FIBRE REFERRAL",
       "LADDERS WILL BE PROVIDED",
-    ][Math.floor(Math.random() * 5)];
+    ];
+    document.getElementById("expect").innerHTML =
+      slogans[Math.floor(Math.random() * slogans.length)];
   }, 2500);
 </script>
