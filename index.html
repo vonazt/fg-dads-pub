@@ -86,21 +86,30 @@
     document.getElementById("location").innerHTML = "CIDERHOUSE!!";
   }, 2000);
 
+  const allSlogans = [
+    "CALL BARBIE FOR AN ABUSIVE TIME",
+    "PROFESSOR TABATOU WILL BE THERE IN SPIRIT",
+    "BAN THE CARS",
+    "LIZZIE LINE IS FUCKED",
+    "CLICK HERE FOR COMMUNITY FIBRE REFERRAL",
+    "LADDERS WILL BE PROVIDED",
+    "GOT WOOD?",
+    "BRING A DRYING RACK, GET A FREE DEHUMIDIFIER",
+    "NOT AVAILABLE ON SOCIAL MEDIA",
+    "MEMBERS OF MOST POLITICAL PARTIES WELCOME",
+    "PROUDLY SPONSORED BY THE MSG SPHERE",
+  ];
+
+  let slogans = [...allSlogans];
+
   setInterval(() => {
-    const slogans = [
-      "CALL BARBIE FOR AN ABUSIVE TIME",
-      "PROFESSOR TABATOU WILL BE THERE IN SPIRIT",
-      "BAN THE CARS",
-      "LIZZIE LINE IS FUCKED",
-      "CLICK HERE FOR COMMUNITY FIBRE REFERRAL",
-      "LADDERS WILL BE PROVIDED",
-      "GOT WOOD?",
-      "BRING A DRYING RACK, GET A FREE DEHUMIDIFIER",
-      "NOT AVAILABLE ON SOCIAL MEDIA",
-      "MEMBERS OF MOST POLITICAL PARTIES WELCOME",
-      "PROUDLY SPONSORED BY THE MSG SPHERE",
-    ];
-    document.getElementById("expect").innerHTML =
-      slogans[Math.floor(Math.random() * slogans.length)];
+    if (slogans.length === 0) {
+      slogans = [...allSlogans];
+    }
+    const sloganIndex = Math.floor(Math.random() * slogans.length);
+
+    const slogan = slogans.splice(sloganIndex, 1);
+
+    document.getElementById("expect").innerHTML = slogan;
   }, 2500);
 </script>
