@@ -33,7 +33,7 @@
 </html>
 
 <script>
-  var end = new Date("2023/10/13 08:0 PM");
+  var end = new Date("2024/01/20 08:0 PM");
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
@@ -83,7 +83,7 @@
   showRemaining();
   timer = setInterval(showRemaining, 1000);
   setInterval(() => {
-    document.getElementById("location").innerHTML = "PRETTY DECENT TAPROOM!!";
+    document.getElementById("location").innerHTML = "CIDERHOUSE!!";
   }, 2000);
 
   setInterval(() => {
@@ -94,6 +94,11 @@
       "LIZZIE LINE IS FUCKED",
       "CLICK HERE FOR COMMUNITY FIBRE REFERRAL",
       "LADDERS WILL BE PROVIDED",
+      "GOT WOOD?",
+      "BRING A DRYING RACK, GET A FREE DEHUMIDIFIER",
+      "NOT AVAILABLE ON SOCIAL MEDIA",
+      "MEMBERS OF MOST POLITICAL PARTIES WELCOME",
+      "PROUDLY SPONSORED BY THE MSG SPHERE",
     ];
     document.getElementById("expect").innerHTML =
       slogans[Math.floor(Math.random() * slogans.length)];
