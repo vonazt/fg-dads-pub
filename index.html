@@ -33,7 +33,7 @@
 </html>
 
 <script>
-  var end = new Date("2025/02/07 08:0 PM");
+  var end = new Date("2025/10/23 08:0 PM");
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
@@ -83,18 +83,16 @@
   showRemaining();
   timer = setInterval(showRemaining, 1000);
   setInterval(() => {
-    document.getElementById("location").innerHTML = "FOREST TAVERN!!";
+    document.getElementById("location").innerHTML =
+      "PRETTY DECENT BEER COMPANY!!";
   }, 2000);
 
   const allSlogans = [
-    "CALL BARBIE FOR AN ABUSIVE TIME",
     "PROFESSOR TABATOU WILL BE THERE IN SPIRIT",
     "BAN THE CARS",
     "LIZZIE LINE IS FUCKED",
     "CLICK HERE FOR COMMUNITY FIBRE REFERRAL",
     "LADDERS WILL BE PROVIDED",
-    "GOT WOOD?",
-    "BRING A DRYING RACK, GET A FREE DEHUMIDIFIER",
     "NOT AVAILABLE ON SOCIAL MEDIA",
     "MEMBERS OF MOST POLITICAL PARTIES WELCOME",
     "PROUDLY SPONSORED BY THE MSG SPHERE",
@@ -107,6 +105,11 @@
     "THAMES WATER DIVIDENDS FOR FIRST 20 DADS",
     "BATTLE OF THE HOSPITALS BEGINS AT 10PM",
     "COMPLEMENTARY MONOCLE FOR ALL DADS EARNING OVER £80K",
+    "BRING YOUR BOILER AND GET A FREE HEAT PUMP",
+    "BRING BACK COAL!!",
+    "100% GUARANTEED NOT TO BE AI GENERATED",
+    "HAVE YOU SEEN THIS DOG???",
+    "FREE PINTS FOR ANY VICTIMS OF NOMINATIVE DETERMINISM",
   ];
 
   let slogans = [...allSlogans];
@@ -115,6 +118,7 @@
     if (slogans.length === 0) {
       slogans = [...allSlogans];
     }
+
     const sloganIndex = Math.floor(Math.random() * slogans.length);
 
     const slogan = slogans.splice(sloganIndex, 1);
