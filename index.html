@@ -24,7 +24,7 @@
     <div class="container">
       <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
       <h1 id="countdown">COMPUTING...</h1>
-
+<h1 id="date"></h1>
       <h1>YES, BUT WHERE????</h1>
       <h1 id="location">WAIT FOR IT...</h1>
       <h1 id="expect"></h1>
@@ -60,7 +60,8 @@
     document.getElementById("countdown").innerHTML = days + " days ";
     document.getElementById("countdown").innerHTML += hours + "hrs ";
     document.getElementById("countdown").innerHTML += minutes + "mins ";
-    document.getElementById("countdown").innerHTML += seconds + "secs ";
+    document.getElementById("countdown").innerHTML += seconds + "secs "
+document.getElementById("date").innerHTML += "or" + new Date("2026/06/06 08:0 PM").toLocaleString() + "for those who don't math"
   }
 
   setInterval(() => {
@@ -117,7 +118,7 @@
     "CITIZENS OF THE PEOPLE'S REPUBLIC OF MARYLAND VILLAGE DRINK FREE",
     "PROVE WE ARE ALL ONE, GET A FREE ROUND",
 "DON'T BE A CUNT, YOU CUNT", "OFFICIALLY ANGINE DE POITRINE'S FAVOURITE DADS DRINKS",
-"PROMISES TO BE ALMOST AS GOOD AS A NIGHT IN WITH GAMBIAN CHICKEN", "CHILDREN MUST BE DBS CHECKED", "CHILDREN MUST NOT BE ACCOMPANIED BY AN ADULT"
+"PROMISES TO BE ALMOST AS GOOD AS A NIGHT IN WITH GAMBIAN CHICKEN", "CHILDREN MUST BE DBS CHECKED", "CHILDREN MUST NOT BE ACCOMPANIED BY AN ADULT", 
   ];
 
   let slogans = [...allSlogans];
