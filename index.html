@@ -53,13 +53,21 @@
 
     var intervalsPassed = Math.floor(diff / sixWeeksMs);
 
-    // If we're on drinks night (8pm to midnight), stay on this event
-    var currentIntervalDate = new Date(startDate.getTime() + intervalsPassed * sixWeeksMs);
+    var currentIntervalDate = new Date(
+      startDate.getTime() + intervalsPassed * sixWeeksMs,
+    );
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    var eventDay = new Date(currentIntervalDate.getFullYear(), currentIntervalDate.getMonth(), currentIntervalDate.getDate());
+    var eventDay = new Date(
+      currentIntervalDate.getFullYear(),
+      currentIntervalDate.getMonth(),
+      currentIntervalDate.getDate(),
+    );
 
     if (today.getTime() === eventDay.getTime() && now.getHours() >= 20) {
-      return { date: currentIntervalDate, pubIndex: intervalsPassed % pubs.length };
+      return {
+        date: currentIntervalDate,
+        pubIndex: intervalsPassed % pubs.length,
+      };
     }
 
     var nextInterval = intervalsPassed + 1;
@@ -109,7 +117,9 @@
     const b = Math.floor(Math.random() * 256);
     const randomRgb = "rgb(" + r + "," + g + "," + b + ")";
 
+    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
     document.body.style.backgroundColor = randomRgb;
+    document.body.style.color = luminance < 128 ? "white" : "black";
   }, 500);
   showRemaining();
   timer = setInterval(showRemaining, 1000);
