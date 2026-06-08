@@ -52,6 +52,16 @@
     }
 
     var intervalsPassed = Math.floor(diff / sixWeeksMs);
+
+    // If we're on drinks night (8pm to midnight), stay on this event
+    var currentIntervalDate = new Date(startDate.getTime() + intervalsPassed * sixWeeksMs);
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var eventDay = new Date(currentIntervalDate.getFullYear(), currentIntervalDate.getMonth(), currentIntervalDate.getDate());
+
+    if (today.getTime() === eventDay.getTime() && now.getHours() >= 20) {
+      return { date: currentIntervalDate, pubIndex: intervalsPassed % pubs.length };
+    }
+
     var nextInterval = intervalsPassed + 1;
     var nextDate = new Date(startDate.getTime() + nextInterval * sixWeeksMs);
     var pubIndex = nextInterval % pubs.length;
@@ -94,21 +104,12 @@
   }
 
   setInterval(() => {
-    const randomColour = Math.floor(0x100000000 * Math.random());
-    const randomRgba =
-      "rgba(" +
-      (randomColour & 255) +
-      "," +
-      ((randomColour >> 8) & 255) +
-      "," +
-      ((randomColour >> 16) & 255) +
-      "," +
-      ((randomColour >> 24) & 255) / 255 +
-      ")";
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const randomRgb = "rgb(" + r + "," + g + "," + b + ")";
 
-    document.body.style.backgroundColor = randomRgba;
-
-    color.innerHTML = randomRgba;
+    document.body.style.backgroundColor = randomRgb;
   }, 500);
   showRemaining();
   timer = setInterval(showRemaining, 1000);
