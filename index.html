@@ -24,7 +24,7 @@
     <div class="container">
       <h1>HOW LONG UNTIL FG DADS DRINKS???</h1>
       <h1 id="countdown">COMPUTING...</h1>
-<h1 id="date"></h1>
+      <h1 id="date"></h1>
       <h1>YES, BUT WHERE????</h1>
       <h1 id="location">WAIT FOR IT...</h1>
       <h1 id="expect"></h1>
@@ -33,7 +33,37 @@
 </html>
 
 <script>
-  var end = new Date("2026/06/06 08:0 PM");
+  const pubs = [
+    "FOREST TAVERN",
+    "HOLLY TREE",
+    "PRETTY DECENT TAP ROOM",
+    "THE BOLEYN TAVERN",
+  ];
+
+  const startDate = new Date("2026-06-06");
+  const sixWeeksMs = 6 * 7 * 24 * 60 * 60 * 1000;
+
+  // Work out the next pub date and which pub we're at
+  function getNextPubInfo() {
+    var now = new Date();
+    var diff = now - startDate;
+
+    if (diff < 0) {
+      // We're before the start date, so the first event is next
+      return { date: startDate, pubIndex: 0 };
+    }
+
+    var intervalsPassed = Math.floor(diff / sixWeeksMs);
+    var nextInterval = intervalsPassed + 1;
+    var nextDate = new Date(startDate.getTime() + nextInterval * sixWeeksMs);
+    var pubIndex = nextInterval % pubs.length;
+
+    return { date: nextDate, pubIndex: pubIndex };
+  }
+
+  var pubInfo = getNextPubInfo();
+  var end = new Date(pubInfo.date);
+  end.setHours(20, 0, 0, 0); // 8 PM
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
@@ -60,8 +90,9 @@
     document.getElementById("countdown").innerHTML = days + " days ";
     document.getElementById("countdown").innerHTML += hours + "hrs ";
     document.getElementById("countdown").innerHTML += minutes + "mins ";
-    document.getElementById("countdown").innerHTML += seconds + "secs "
-document.getElementById("date").innerHTML = "or " + new Date("2026/06/06 08:0 PM").toLocaleString() + " for those who don't math"
+    document.getElementById("countdown").innerHTML += seconds + "secs ";
+    document.getElementById("date").innerHTML =
+      "or " + end.toLocaleString() + " for those who don't math";
   }
 
   setInterval(() => {
@@ -84,8 +115,7 @@ document.getElementById("date").innerHTML = "or " + new Date("2026/06/06 08:0 PM
   showRemaining();
   timer = setInterval(showRemaining, 1000);
   setInterval(() => {
-    document.getElementById("location").innerHTML =
-      "FOREST TAVERN WITH SUPER SPECIAL MUSICAL GUESTS DAD BAND THE FORESTERS";
+    document.getElementById("location").innerHTML = pubs[pubInfo.pubIndex];
   }, 2000);
 
   const allSlogans = [
@@ -117,8 +147,15 @@ document.getElementById("date").innerHTML = "or " + new Date("2026/06/06 08:0 PM
     "COLONIAL SETTLERS PAY DOUBLE",
     "CITIZENS OF THE PEOPLE'S REPUBLIC OF MARYLAND VILLAGE DRINK FREE",
     "PROVE WE ARE ALL ONE, GET A FREE ROUND",
-"DON'T BE A CUNT, YOU CUNT", "OFFICIALLY ANGINE DE POITRINE'S FAVOURITE DADS DRINKS",
-"PROMISES TO BE ALMOST AS GOOD AS A NIGHT IN WITH GAMBIAN CHICKEN", "CHILDREN MUST BE DBS CHECKED", "CHILDREN MUST NOT BE ACCOMPANIED BY AN ADULT", ".... . .-.. .--. / -- -.-- / -.- .. -.. ... / .- .-. . / -     .-. -.-- .. -. --. / - --- / -.- .. .-.. .-.. / -- .", "ALL POST-2000 TECHNOLOGY WILL BE CONFISCATED", "A NIGHT THAT WILL BE RETRO IN A WAY THAT'S TOTALLY RETRO BEFORE IT WAS COOL TO BE RETRO", "SOON TO BE REPLACED BY A BETTING SHOP"
+    "DON'T BE A CUNT, YOU CUNT",
+    "OFFICIALLY ANGINE DE POITRINE'S FAVOURITE DADS DRINKS",
+    "PROMISES TO BE ALMOST AS GOOD AS A NIGHT IN WITH GAMBIAN CHICKEN",
+    "CHILDREN MUST BE DBS CHECKED",
+    "CHILDREN MUST NOT BE ACCOMPANIED BY AN ADULT",
+    ".... . .-.. .--. / -- -.-- / -.- .. -.. ... / .- .-. . / -     .-. -.-- .. -. --. / - --- / -.- .. .-.. .-.. / -- .",
+    "ALL POST-2000 TECHNOLOGY WILL BE CONFISCATED",
+    "A NIGHT THAT WILL BE RETRO IN A WAY THAT'S TOTALLY RETRO BEFORE IT WAS COOL TO BE RETRO",
+    "SOON TO BE REPLACED BY A BETTING SHOP",
   ];
 
   let slogans = [...allSlogans];
