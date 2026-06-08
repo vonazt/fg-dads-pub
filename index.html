@@ -43,13 +43,11 @@
   const startDate = new Date("2026-06-06");
   const sixWeeksMs = 6 * 7 * 24 * 60 * 60 * 1000;
 
-  // Work out the next pub date and which pub we're at
   function getNextPubInfo() {
     var now = new Date();
     var diff = now - startDate;
 
     if (diff < 0) {
-      // We're before the start date, so the first event is next
       return { date: startDate, pubIndex: 0 };
     }
 
@@ -63,7 +61,7 @@
 
   var pubInfo = getNextPubInfo();
   var end = new Date(pubInfo.date);
-  end.setHours(20, 0, 0, 0); // 8 PM
+  end.setHours(20, 0, 0, 0);
 
   var _millisecond = 1;
   var _second = _millisecond * 1000;
