@@ -63,7 +63,7 @@
       currentIntervalDate.getDate(),
     );
 
-    if (today.getTime() === eventDay.getTime() && now.getHours() >= 20) {
+    if (today.getTime() === eventDay.getTime()) {
       return {
         date: currentIntervalDate,
         pubIndex: intervalsPassed % pubs.length,
@@ -164,7 +164,10 @@
     ".... . .-.. .--. / -- -.-- / -.- .. -.. ... / .- .-. . / -     .-. -.-- .. -. --. / - --- / -.- .. .-.. .-.. / -- .",
     "ALL POST-2000 TECHNOLOGY WILL BE CONFISCATED",
     "A NIGHT THAT WILL BE RETRO IN A WAY THAT'S TOTALLY RETRO BEFORE IT WAS COOL TO BE RETRO",
-    "SOON TO BE REPLACED BY A BETTING SHOP", "DISCOUNT PRICES AVAILABLE ON ALL A/C UNITS AND RAY-BANS", "DADS IN YOUR LOCAL AREA WANT TO MEET", "NO SOFA FUCKERS PLEASE"
+    "SOON TO BE REPLACED BY A BETTING SHOP",
+    "DISCOUNT PRICES AVAILABLE ON ALL A/C UNITS AND RAY-BANS",
+    "DADS IN YOUR LOCAL AREA WANT TO MEET",
+    "NO SOFA FUCKERS PLEASE",
   ];
 
   let slogans = [...allSlogans];
